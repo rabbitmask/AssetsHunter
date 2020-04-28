@@ -7,10 +7,10 @@
 |  _ < (_| | |_) | |_) | | |_| |  | | (_| \__ \   <
 |_| \_\__,_|_.__/|_.__/|_|\__|_|  |_|\__,_|___/_|\_\
 '''
-from Config.config_saveinfo import Saveinfo_n
+from Core.decorators import Save_info
 
 
-@Saveinfo_n
+@Save_info
 def Kill_repeat(filename):
     fr=open(filename,'r')
     # fr=open(filename,'r',encoding='utf-8')
