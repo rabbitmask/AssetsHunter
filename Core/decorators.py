@@ -36,7 +36,7 @@ def Save_info(fun):
             filename='Output/{}_result_{}.rabbit'.format(fun.__name__,timetoken)
             for i in result:
                 fw = open(filename, 'a')
-                fw.write(i + '\n')
+                fw.write(i.replace('\n','') + '\n')
                 fw.close()
             print('结果已保存至：'+filename)
         return fun(*args, **kwargs)
