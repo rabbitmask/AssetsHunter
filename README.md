@@ -15,7 +15,7 @@ usage: AssetsHunter.py [-h] [-t TARGET] [-p PORT] [-u USER] [-l LEVEL]
                        [-fofa FOFA] [-ipwhois IPWHOIS] [-whois WHOIS]
                        [-shadon SHADON] [-cidr CIDR] [-emaildig EMAILDIG]
                        [-removal REMOVAL] [-mysqlc MYSQLC] [-redisc REDISC]
-
+                       [-ftpc FTPC] [-sshc SSHC]
 
 optional arguments:
   -h, --help          show this help message and exit
@@ -23,7 +23,6 @@ optional arguments:
   -p PORT             port
   -u USER             user
   -l LEVEL            level
-
 
 AHF Modules:
   -asn ASN            ASN查询ICDR
@@ -39,10 +38,12 @@ AHF Tools:
   -cidr CIDR          Cidr转换为IP范围
   -emaildig EMAILDIG  Email挖掘工具(入口:文件)
   -removal REMOVAL    数据去重工具(入口:文件)
-  
+
 AHF Cracks:
   -mysqlc MYSQLC      MySQL爆破
   -redisc REDISC      redis爆破
+  -ftpc FTPC          FTP爆破
+  -sshc SSHC          SSH爆破
 ```
 ```
 V 1.1更新日志
