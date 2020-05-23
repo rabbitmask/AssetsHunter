@@ -16,15 +16,17 @@ def Get_dic(filename):
 
 def Level_dic(lv):
     lv=int(lv)
-    if lv==1:
+    if lv==0:
+        return Get_dic('Dictionaries/1.txt')
+    elif lv==1:
         return Get_dic('Dictionaries/10.txt')
-    if lv==2:
+    elif lv==2:
         return Get_dic('Dictionaries/100.txt')
-    if lv==3:
+    elif lv==3:
         return Get_dic('Dictionaries/1000.txt')
-    if lv==4:
+    elif lv==4:
         return Get_dic('Dictionaries/10000.txt')
-    if lv==5:
+    elif lv==5:
         return Get_dic('Dictionaries/100000.txt')
     else:
         print('砸场子？？？')
