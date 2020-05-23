@@ -8,15 +8,22 @@
 /  _  \__ \__ \  __/ |_\__ \/ __  /| |_| | | | | ||  __/ |
 \_/ \_/___/___/\___|\__|___/\/ /_/  \__,_|_| |_|\__\___|_|
 
-                                         AssetsHunterFramework | By RabbitMask | V 1.0
+                                         AssetsHunterFramework | By RabbitMask | V 1.1
 
-usage: AssetsHunter.py [-h] [-asn ASN] [-censys CENSYS] [-crt CRT] [-dns DNS]
+usage: AssetsHunter.py [-h] [-t TARGET] [-p PORT] [-u USER] [-l LEVEL]
+                       [-asn ASN] [-censys CENSYS] [-crt CRT] [-dns DNS]
                        [-fofa FOFA] [-ipwhois IPWHOIS] [-whois WHOIS]
                        [-shadon SHADON] [-cidr CIDR] [-emaildig EMAILDIG]
-                       [-removal REMOVAL]
+                       [-removal REMOVAL] [-mysqlc MYSQLC] [-redisc REDISC]
+
 
 optional arguments:
   -h, --help          show this help message and exit
+  -t TARGET           target
+  -p PORT             port
+  -u USER             user
+  -l LEVEL            level
+
 
 AHF Modules:
   -asn ASN            ASN查询ICDR
@@ -32,10 +39,15 @@ AHF Tools:
   -cidr CIDR          Cidr转换为IP范围
   -emaildig EMAILDIG  Email挖掘工具(入口:文件)
   -removal REMOVAL    数据去重工具(入口:文件)
+  
+AHF Cracks:
+  -mysqlc MYSQLC      MySQL爆破
+  -redisc REDISC      redis爆破
 ```
-
-  V1.0开放测试，为了增加功能并未拓展并发性
-  如有bug纯属正常，有功能和API建议欢迎提议~
-
+```
+V 1.1更新日志
+   增加Cracks爆破模块
+   增加字典模块(来自Tide内部字典权重池)
+```
   说明书V1.0
   https://www.jianshu.com/p/aec51e4c368e
