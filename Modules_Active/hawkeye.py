@@ -46,7 +46,7 @@ def Get_tile(url,res,q):
             print(url+'  '+str(r.status_code)+'  '+title)
             res.append(url+'  '+str(r.status_code)+'  '+title)
         else:
-            print(url + '  ' + str(r.status_code) + '  ' + r.text[0:30])
+            print(url + '  ' + str(r.status_code) + '  ' + r.text.replace('\n','')[0:30])
             res.append(url + '  ' + str(r.status_code) + '  ' + r.text.replace('\n','')[0:30])
     except:
         pass
