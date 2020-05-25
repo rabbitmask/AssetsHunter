@@ -39,5 +39,5 @@ def Save_info(fun):
                 fw.write(i.replace('\n','') + '\n')
                 fw.close()
             print('结果已保存至：'+filename)
-        return fun(*args, **kwargs)
+        # return fun(*args, **kwargs)
     return work
