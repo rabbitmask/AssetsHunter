@@ -10,14 +10,15 @@
 import re
 import requests
 from multiprocessing import Pool, Manager
+
+from Config.config_hawkeye import Port_HTTP, Port_HTTPS
 from Config.config_requests import headers
 from Core.decorators import Save_info
 from Tools.cidr_ip import Cidr_ips
 
 requests.packages.urllib3.disable_warnings()
 
-Port_HTTP=[80,8080,8080,7001]
-Port_HTTPS=[443]
+
 
 
 def Get_urls(cidr):
@@ -37,7 +38,6 @@ def Get_urls(cidr):
         pass
 
 def Get_tile(url,res,q):
-    print(url)
     try:
         r=requests.get(url,headers=headers,timeout=3,verify=False)
         rule = re.compile(r'<title>(.*?)</title>')
@@ -52,13 +52,14 @@ def Get_tile(url,res,q):
         pass
     q.put(url)
 
+@Save_info
 def Hawkeye(cidr):
     res = Manager().list([])
     p = Pool(30)
     q = Manager().Queue()
     urls=Get_urls(cidr)
+    print('侦测开始~加载任务量：{}条'.format(len(urls)))
     if urls:
-        print(urls)
         for i in urls:
             p.apply_async(Get_tile, args=(i,res,q))
         p.close()
