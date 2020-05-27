@@ -2,7 +2,7 @@
 资产狩猎框架-AssetsHunter，信息收集是一项艺术~
 
 ```
-   _____                        __           ___ ___               __
+    _____                        __           ___ ___               __
   /  _  \   ______ ______ _____/  |_  ______/   |   \ __ __  _____/  |_  ___________
  /  /_\  \ /  ___//  ___// __ \   __\/  ___/    ~    \  |  \/    \   __\/ __ \_  __ \
 /    |    \\___ \ \___ \\  ___/|  |  \___ \\    Y    /  |  /   |  \  | \  ___/|  | \/
@@ -12,7 +12,8 @@
                                          AssetsHunterFramework | By RabbitMask | V 1.1
 
 usage: AssetsHunter.py [-h] [-t TARGET] [-p PORT] [-u USER] [-l LEVEL]
-                       [-hawkeye HAWKEYE] [-asn ASN] [-censys CENSYS]
+                       [-hawkeye HAWKEYE] [-inforisk INFORISK]
+                       [-whatcms WHATCMS] [-asn ASN] [-censys CENSYS]
                        [-crt CRT] [-dns DNS] [-fofa FOFA] [-ipwhois IPWHOIS]
                        [-whois WHOIS] [-shadon SHADON] [-cidr CIDR]
                        [-emaildig EMAILDIG] [-removal REMOVAL]
@@ -38,6 +39,8 @@ AHF Modules_Passive:
 
 AHF Modules_Active:
   -hawkeye HAWKEYE    Cidr Site 侦测
+  -inforisk INFORISK  信息泄露检测
+  -whatcms WHATCMS    指纹识别(TideFinger)
 
 AHF Tools:
   -cidr CIDR          Cidr转换为IP范围
@@ -52,12 +55,16 @@ AHF Cracks:
 ```
 ```
 V 1.1更新日志
-   增加Cracks轻量级爆破模块
+   新增Cracks轻量级爆破模块
       目前支持mysql、redis、ftp、ssh
-   增加字典模块
+   新增字典模块
       来自TideSec内部字典权重池
-   增加Hawkeye侦测模块
-      用于对未知区段站点快速侦测
+   原核心模块降级为被动式信息收集模块
+   新增主动式信息收集模块
+      Hawkeye区段快速侦测模块
+      inforisk信息泄露检测模块
+      whatcms指纹识别模块(TideFinger提供指纹库支持)
+   修复某些不可描述的Bug
 ```
   说明书V1.0
   https://www.jianshu.com/p/aec51e4c368e
