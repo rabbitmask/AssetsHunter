@@ -41,13 +41,13 @@ def Get_tile(url,res,q):
     try:
         r=requests.get(url,headers=headers,timeout=3,verify=False)
         rule = re.compile(r'<title>(.*?)</title>')
-        title = rule.findall(r.text)
+        title = rule.findall(r.content.decode('utf-8'))
         if title:
             print(url+'  '+str(r.status_code)+'  '+title[0])
             res.append(url+'  '+str(r.status_code)+'  '+title[0])
         else:
-            print(url + '  ' + str(r.status_code) + '  ' + r.text.replace('\n','')[0:30])
-            res.append(url + '  ' + str(r.status_code) + '  ' + r.text.replace('\n','')[0:30])
+            print(url + '  ' + str(r.status_code) + '  ' + r.content.decode('utf-8').replace('\n','')[0:30])
+            res.append(url + '  ' + str(r.status_code) + '  ' + r.content.decode('utf-8').replace('\n','')[0:30])
     except:
         pass
     q.put(url)
