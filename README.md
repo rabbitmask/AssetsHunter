@@ -9,7 +9,7 @@
 \____|__  /____  >____  >\___  >__| /____  >\___|_  /|____/|___|  /__|  \___  >__|
         \/     \/     \/     \/          \/       \/            \/          \/
 
-                                         AssetsHunterFramework | By RabbitMask | V 1.1
+                                         AssetsHunterFramework | By Tide_RabbitMask | V 1.1
 
 usage: AssetsHunter.py [-h] [-t TARGET] [-p PORT] [-u USER] [-l LEVEL]
                        [-hawkeye HAWKEYE] [-inforisk INFORISK]
