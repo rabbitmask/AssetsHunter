@@ -66,7 +66,8 @@ V 1.1更新日志
       whatcms指纹识别模块(TideFinger提供指纹库支持)
    修复某些不可描述的Bug
 ```
-  说明书V1.0
+  V 1.0说明
   https://www.jianshu.com/p/aec51e4c368e
-  说明书V1.1
+  
+  V 1.1说明
   https://www.jianshu.com/p/e87b5d2aa793
