@@ -68,3 +68,5 @@ V 1.1更新日志
 ```
   说明书V1.0
   https://www.jianshu.com/p/aec51e4c368e
+  说明书V1.1
+  https://www.jianshu.com/p/e87b5d2aa793
