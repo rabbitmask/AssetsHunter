@@ -10,7 +10,7 @@
 import random
 
 Version = 'V 1.1\n'
-info = '\t\t\t\t\t AssetsHunterFramework | By RabbitMask | {}'.format(Version)
+info = '\t\t\t\t\t AssetsHunterFramework | By Tide_RabbitMask | {}'.format(Version)
 banner1 = r'''
    _                _                           _            
   /_\  ___ ___  ___| |_ ___   /\  /\_   _ _ __ | |_ ___ _ __ 
