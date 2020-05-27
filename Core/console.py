@@ -8,7 +8,7 @@
 |_| \_\__,_|_.__/|_.__/|_|\__|_|  |_|\__,_|___/_|\_\
 '''
 import argparse
-from Modules_Active import hawkeye
+from Modules_Active import hawkeye, inforisk, whatcms
 from Modules_Passive import domain_ip, crt_domain, asn_cidr, censys_ip, ip_whois, domain_whois
 from Tools import cidr_ip, kill_repeat, email_dig
 from Cracks import mysql_crack, redis_crack, ftp_crack, ssh_crack
@@ -35,6 +35,8 @@ def Console():
 
     #主动式扫描模块
     ahf_modules_active.add_argument("-hawkeye", dest='hawkeye',help="Cidr Site 侦测")
+    ahf_modules_active.add_argument("-inforisk", dest='inforisk', help="信息泄露检测")
+    ahf_modules_active.add_argument("-whatcms", dest='whatcms', help="指纹识别(TideFinger)")
 
     #被动式扫描模块
     ahf_modules_passive.add_argument("-asn", dest='asn',help="ASN查询ICDR")
@@ -67,6 +69,10 @@ def Console():
     #主动式扫描模块
     if args.hawkeye:
         hawkeye.run(args.hawkeye)
+    elif args.inforisk:
+        inforisk.run(args.inforisk)
+    elif args.whatcms:
+        whatcms.run(args.whatcms)
 
     #被动式扫描模块
     elif args.asn:
