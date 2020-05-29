@@ -40,7 +40,7 @@ def Get_urls(cidr):
 def Get_tile(url,res,q):
     try:
         r=requests.get(url,headers=headers,timeout=3,verify=False)
-        rule = re.compile(r'<title>(.*?)</title>')
+        rule = re.compile(r'<title.*?>(.*?)</title>')
         title = rule.findall(r.content.decode('utf-8'))
         if title:
             print(url+'  '+str(r.status_code)+'  '+title[0])
