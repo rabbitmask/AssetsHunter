@@ -43,8 +43,8 @@ def Get_tile(url,res,q):
         rule = re.compile(r'<title.*?>(.*?)</title>')
         title = rule.findall(r.content.decode('utf-8'))
         if title:
-            print(url+'  '+str(r.status_code)+'  '+title[0])
-            res.append(url+'  '+str(r.status_code)+'  '+title[0])
+            print(url+'  '+str(r.status_code)+'  '+title[0].decode('utf-8'))
+            res.append(url+'  '+str(r.status_code)+'  '+title[0].decode('utf-8'))
         else:
             print(url + '  ' + str(r.status_code) + '  ' + r.content.decode('utf-8').replace('\n','')[0:30])
             res.append(url + '  ' + str(r.status_code) + '  ' + r.content.decode('utf-8').replace('\n','')[0:30])
