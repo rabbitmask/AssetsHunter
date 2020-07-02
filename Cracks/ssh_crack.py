@@ -11,7 +11,7 @@ import paramiko
 from Dictionaries.level_dic import Level_dic
 
 
-def Ftp_crack(host,port,user,lv):
+def Ssh_crack(host,port,user,lv):
     pwds=Level_dic(lv)
     print('字典加载成功：{}条'.format(len(pwds)))
 
@@ -30,7 +30,7 @@ def Ftp_crack(host,port,user,lv):
 
 
 def run(host,port,user,lv):
-    Ftp_crack(host, port, user, lv)
+    Ssh_crack(host, port, user, lv)
 
 if __name__ == '__main__':
     run('127.0.0.1',22,'root',1)
