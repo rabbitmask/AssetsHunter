@@ -43,7 +43,7 @@ def Get_urls(cidr):
 
 def Get_tile(url,res,q):
     try:
-        r=requests.get(url,headers=headers,timeout=3,verify=False)
+        r=requests.get(url,headers=headers,timeout=10,verify=False)
         rule = re.compile(r'<title.*?>(.*?)</title>')
         title = rule.findall(r.content.decode('utf-8'))
         if title:
@@ -74,7 +74,7 @@ def Hawkeye_cidr(cidr):
 
 def Get_tile_file(url,res,q):
     try:
-        r=requests.get(url,headers=headers,timeout=3,verify=False)
+        r=requests.get(url,headers=headers,timeout=10,verify=False)
         rule = re.compile(r'<title.*?>(.*?)</title>')
         title = rule.findall(r.content.decode('utf-8'))
         if title:
@@ -84,8 +84,9 @@ def Get_tile_file(url,res,q):
             print(url + '  ' + str(r.status_code) + '  ' + r.content.decode('utf-8').replace('\n','')[0:30])
             res.append(url + '  ' + str(r.status_code) + '  ' + r.content.decode('utf-8').replace('\n','')[0:30])
     except:
-        print(url + '  ' + "Error" + '  ' + " 网络故障 or 目标服务故障 or 兔子心情不好")
-        res.append(url + '  ' + "Error" + '  ' + " 网络故障 or 目标服务故障 or 兔子心情不好")
+        # print(url + '  ' + "Error" + '  ' + " 网络故障 or 目标服务故障 or 兔子心情不好")
+        # res.append(url + '  ' + "Error" + '  ' + " 网络故障 or 目标服务故障 or 兔子心情不好")
+        pass
     q.put(url)
 
 @Save_info
@@ -114,10 +115,8 @@ def Hawkeye_file(filename):
 def run(*args):
     if len(args)==1:
         if '/' in args[0]:
-            print(123)
             Hawkeye_cidr(args[0])
         else:
-            print(456)
             Hawkeye_file(args[0])
 
 
