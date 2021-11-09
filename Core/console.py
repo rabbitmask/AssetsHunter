@@ -23,7 +23,7 @@ def Console():
 ########################################################################################################################
 
     #主动式扫描模块
-    ahf_modules_active.add_argument("-hawkeye", dest='hawkeye',help="Cidr Site 侦测")
+    ahf_modules_active.add_argument("-hawkeye", dest='hawkeye',help="WEB侦测(cidr/文件)")
     ahf_modules_active.add_argument("-inforisk", dest='inforisk', help="信息泄露检测")
     ahf_modules_active.add_argument("-whatcms", dest='whatcms', help="指纹识别(TideFinger)")
 
@@ -32,10 +32,8 @@ def Console():
     ahf_modules_passive.add_argument("-censys", dest='censys',help="CENSYS API查询")
     ahf_modules_passive.add_argument("-crt", dest='crt',help="证书透明度查询域名")
     ahf_modules_passive.add_argument("-dns", dest='dns',help="DNS A记录解析")
-    ahf_modules_passive.add_argument("-fofa", dest='fofa',help="FOFA API查询(待开放)")
     ahf_modules_passive.add_argument("-ipwhois", dest='ipwhois',help="IP Whois查询")
     ahf_modules_passive.add_argument("-whois", dest='whois',help="域名Whois查询")
-    ahf_modules_passive.add_argument("-shadon", dest='shadon',help="Shadon API查询(待开放)")
 
 
     #资产收集工具模块

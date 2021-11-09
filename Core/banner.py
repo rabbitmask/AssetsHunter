@@ -9,7 +9,7 @@
 '''
 import random
 
-Version = 'V 1.1\n'
+Version = 'V 1.2\n'
 info = '\t\t\t\t\t AssetsHunterFramework | By Tide_RabbitMask | {}'.format(Version)
 banner1 = r'''
    _                _                           _            

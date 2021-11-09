@@ -72,6 +72,22 @@ def Hawkeye_cidr(cidr):
     else:
         print("CIDR格式输入有误，锤你昂w(ﾟДﾟ)w")
 
+def Get_tile_file(url,res,q):
+    try:
+        r=requests.get(url,headers=headers,timeout=3,verify=False)
+        rule = re.compile(r'<title.*?>(.*?)</title>')
+        title = rule.findall(r.content.decode('utf-8'))
+        if title:
+            print(url+'  '+str(r.status_code)+'  '+title[0].decode('utf-8'))
+            res.append(url+'  '+str(r.status_code)+'  '+title[0].decode('utf-8'))
+        else:
+            print(url + '  ' + str(r.status_code) + '  ' + r.content.decode('utf-8').replace('\n','')[0:30])
+            res.append(url + '  ' + str(r.status_code) + '  ' + r.content.decode('utf-8').replace('\n','')[0:30])
+    except:
+        print(url + '  ' + "Error" + '  ' + " 网络故障 or 目标服务故障 or 兔子心情不好")
+        res.append(url + '  ' + "Error" + '  ' + " 网络故障 or 目标服务故障 or 兔子心情不好")
+    q.put(url)
+
 @Save_info
 def Hawkeye_file(filename):
     res = Manager().list([])
@@ -85,7 +101,7 @@ def Hawkeye_file(filename):
         print('侦测开始~加载任务量：{}条'.format(len(urls)))
         if urls:
             for i in urls:
-                p.apply_async(Get_tile, args=(urlcheck(i.replace('\n','')),res,q))
+                p.apply_async(Get_tile_file, args=(urlcheck(i.replace('\n','')),res,q))
             p.close()
             p.join()
             return res
@@ -96,11 +112,13 @@ def Hawkeye_file(filename):
 
 
 def run(*args):
-    if len(args)==2:
-        if isinstance(args[1],str):
-            Hawkeye_cidr(args[1])
+    if len(args)==1:
+        if '/' in args[0]:
+            print(123)
+            Hawkeye_cidr(args[0])
         else:
-            Hawkeye_file(args[1])
+            print(456)
+            Hawkeye_file(args[0])
 
 
 if __name__ == '__main__':
