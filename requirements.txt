@@ -1,4 +1,4 @@
-redis==3.5.2
+redis==4.4.4
 python_whois==0.7.2
 lxml==4.6.3
 paramiko==2.7.1
